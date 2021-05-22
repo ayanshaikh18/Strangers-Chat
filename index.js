@@ -13,15 +13,24 @@ const io = socket(server);
 
 app.use(express.static(path.join(__dirname, "public")));
 
+var users = {}
+
 io.on("connection", (socket) => {
   console.log("New Client Connected");
 
+  socket.on("join",(user)=>{
+    users[socket.id] = user;
+    socket.broadcast.emit("new-user",user);
+  })
+
   socket.on("new-message", (msg) => {
-    console.log("New Msg :- " + msg);
     socket.broadcast.emit("got-new-msg", msg);
   });
 
   socket.on("disconnect", () => {
-    console.log("Client Disconnected");
+    let user = users[socket.id]
+    socket.broadcast.emit("left-user",user);
+    delete users[socket.id];
+    console.log(user+ " Disconnected");
   });
 });

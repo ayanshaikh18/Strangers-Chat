@@ -1,13 +1,22 @@
-$("#sendbtn").click(send_msg);
-
+var sender_name;
 const socket = io();
 const msg_input = $("#msg");
-const sender = $("#sender");
 const msg_div = $("#msgs");
+
+window.onload = function (){
+  sender_name = prompt("Enter Your Name")
+  socket.emit("join",sender_name)
+  msg_div.append(`
+    <div class='notification'>You Joined</div>
+  `)
+}
+
+$("#sendbtn").click(send_msg);
+
 
 function send_msg() {
   let new_msg = {
-    sender: sender.val(),
+    sender: sender_name,
     message: msg_input.val(),
     time: new Date().getHours()+" : " + new Date().getMinutes(),
   };
@@ -33,3 +42,15 @@ socket.on("got-new-msg", (msg) => {
     `);
   msg_div.scrollTop(msg_div.height());
 });
+
+socket.on("new-user", user => {
+  msg_div.append(`
+    <div class='notification'>${user} joined</div>
+  `)
+})
+
+socket.on("left-user", user => {
+  msg_div.append(`
+    <div class='notification'>${user} left</div>
+  `)
+})
