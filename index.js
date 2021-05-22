@@ -11,7 +11,7 @@ const server = app.listen(PORT, () => {
 
 const io = socket(server);
 
-app.use(express.static(path.join(__dirname, "frontend")));
+app.use(express.static(path.join(__dirname, "public")));
 
 io.on("connection", (socket) => {
   console.log("New Client Connected");
