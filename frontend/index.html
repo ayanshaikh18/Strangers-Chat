@@ -1,14 +1,37 @@
 <!DOCTYPE html>
 <html>
-  <head></head>
+  <head>
+    <title>Stranger Chat</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
   <body>
-    <div>
-      <input type="text" id="sender" name="sender" placeholder="Your Name" />
-      <br /><br />
-      <div id="msgs">Messages :- <br /><br /></div>
-      <input type="text" id="msg" name="msg" placeholder="Add New msg..." />
-      <br /><br />
-      <button id="sendbtn">Send</button>
+    <div id="main">
+      <div></div>
+      <div id="center-area">
+        <div id="msg-top">
+          <input
+            type="text"
+            id="sender"
+            name="sender"
+            placeholder="Your Name"
+            value="User"
+          />
+        </div>
+        <div id="msgs"></div>
+        <div id="msg_bottom">
+          <input
+            type="text"
+            id="msg"
+            autocomplete="off"
+            name="msg"
+            placeholder="Add New msg..."
+          />
+          <button id="sendbtn">
+            <i class="fa fa-paper-plane" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+      <div></div>
     </div>
 
     <script src="/socket.io/socket.io.js"></script>
@@ -17,6 +40,7 @@
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
       crossorigin="anonymous"
     ></script>
+    <script src="https://use.fontawesome.com/a3df2a278d.js"></script>
     <script src="./script.js"></script>
   </body>
 </html>

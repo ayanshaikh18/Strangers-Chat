@@ -1,0 +1,116 @@
+body {
+  min-height: 100%;
+  min-width: 100%;
+  /* background-color: #66c2ff; */
+  background: rgb(66, 109, 207);
+  background: linear-gradient(
+    90deg,
+    rgba(66, 109, 207, 1) 30%,
+    rgba(9, 73, 121, 1) 62%
+  );
+
+  justify-content: center;
+  align-items: center;
+}
+
+#main {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+  margin: 50px 5px;
+  min-height: 500px;
+}
+@media only screen and (max-width: 700px) {
+  #main {
+    grid-template-columns: 0% 100% 0%;
+    margin: 50px 50px;
+
+    min-height: 400px;
+  }
+  #msg_bottom {
+    grid-template-columns: 0% 80% 20%;
+  }
+}
+
+#center-area {
+  background: #fafafa;
+  border-radius: 20px;
+  /* padding: 10px; */
+  box-shadow: 0px 8px 16px 0px #f1f1f1;
+  position: relative;
+}
+
+#msg_bottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #ebeced;
+  /* height: 40px; */
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+#msg {
+  height: 35px;
+  border-radius: 10px;
+  border-width: 1px;
+  text-align: center;
+  background-color: #ebeced;
+  outline: none;
+  border: hidden;
+  width: 90%;
+}
+
+#sendbtn {
+  border-radius: 50%;
+  right: 0;
+  height: 30px;
+}
+
+#msg-top{
+    /* height: 50px; */
+    padding: 10px;
+    background-color: #ebeced;
+}
+#sender, #sender:focus{
+    font-size: 20px;
+    border:hidden;
+    outline: none;
+    background-color: #ebeced;
+}
+
+#msgs{
+    display: flex;
+    flex-direction: column;
+    z-index:0;
+    overflow-y: scroll;
+    overflow-x: hidden; 
+    height: 380px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+#msgs::-webkit-scrollbar{
+    display: none;
+}
+.me,.you{
+    width: 60%;
+    margin-top: 20px;
+    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.me{
+    align-self: flex-end;
+    background-color: rgb(117, 86, 255);
+    color: #fff;
+    margin-right: 10px;
+}
+
+.you{
+    align-self: flex-start;
+    background-color: rgb(235, 235, 238);
+    color: rgb(117, 86, 255);
+    margin-left: 10px;
+}
