@@ -21,6 +21,7 @@ io.on("connection", (socket) => {
   socket.on("join",(user)=>{
     users[socket.id] = user;
     socket.broadcast.emit("new-user",user);
+    socket.broadcast.emit("user-list-updated",users)
   })
 
   socket.on("new-message", (msg) => {
@@ -32,5 +33,6 @@ io.on("connection", (socket) => {
     socket.broadcast.emit("left-user",user);
     delete users[socket.id];
     console.log(user+ " Disconnected");
+    socket.broadcast.emit("user-list-updated",users)
   });
 });

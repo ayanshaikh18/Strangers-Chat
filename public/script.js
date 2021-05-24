@@ -54,3 +54,7 @@ socket.on("left-user", user => {
     <div class='notification'>${user} left</div>
   `)
 })
+
+socket.on("user-list-updated",userList=>{
+  console.log(userList)
+})
