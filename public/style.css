@@ -9,40 +9,14 @@ body {
     rgba(9, 73, 121, 1) 62%
   );
 
-  justify-content: center;
-  align-items: center;
-}
-
-#main {
-  margin-top: 50px;
-  display: grid;
-  grid-template-columns: 25% 50% 25%;
-  margin: 50px 5px;
-}
-@media only screen and (max-width: 900px) {
-  #main {
-    grid-template-columns: 0% 100% 0%;
-    margin: 50px 50px;
-
-    min-height: 400px;
-  }
-}
-
-#center-area {
-  background: #fafafa;
-  border-radius: 20px;
-  /* padding: 10px; */
-  box-shadow: 0px 8px 16px 0px #f1f1f1;
-  position: relative;
-  min-height: 500px;
+    justify-content: center;
+    align-items: center;
 }
 
 #msg_bottom {
   position: absolute;
   bottom: 0;
-  width: 100%;
   background-color: #ebeced;
-  /* height: 40px; */ 
 }
 
 #msg {
@@ -54,9 +28,8 @@ body {
 }
 
 #sendbtn {
+  height: 35px;
   border-radius: 50%;
-  right: 0;
-  height: 30px;
 }
 
 #msg-top{
