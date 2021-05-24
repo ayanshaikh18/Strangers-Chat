@@ -9,8 +9,8 @@ body {
     rgba(9, 73, 121, 1) 62%
   );
 
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 #msg_bottom {
@@ -32,77 +32,79 @@ body {
   border-radius: 50%;
 }
 
-#msg-top{
-    /* height: 50px; */
-    padding: 10px;
-    background-color: #ebeced;
+#msg-top {
+  /* height: 50px; */
+  padding: 10px;
+  background-color: #ebeced;
 }
-#sender, #sender:focus{
-    font-size: 20px;
-    border:hidden;
-    outline: none;
-    background-color: #ebeced;
-}
-
-#msgs{
-    display: flex;
-    flex-direction: column;
-    z-index:0;
-    overflow-y: scroll;
-    overflow-x: hidden; 
-    height: 350px;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+#sender,
+#sender:focus {
+  font-size: 20px;
+  border: hidden;
+  outline: none;
+  background-color: #ebeced;
 }
 
-#msgs::-webkit-scrollbar{
-    display: none;
-}
-.me,.you{
-    width: 60%;
-    margin-top: 20px;
-    border-radius: 15px;
-    padding: 15px;
-    /* margin-bottom: 10px; */
-    position: relative;
-}
-
-.me{
-    align-self: flex-end;
-    background-color: rgb(117, 86, 255);
-    color: #fff;
-    margin-right: 10px;
+#msgs {
+  display: flex;
+  flex-direction: column;
+  z-index: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 350px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-.you{
-    align-self: flex-start;
-    background-color: rgb(235, 235, 238);
-    color: rgb(50, 50, 51);
-    margin-left: 10px;
+#msgs::-webkit-scrollbar {
+  display: none;
+}
+.me,
+.you {
+  width: 60%;
+  margin-top: 20px;
+  border-radius: 15px;
+  padding: 15px;
+  /* margin-bottom: 10px; */
+  position: relative;
 }
 
-.sender{
+.me {
+  align-self: flex-end;
+  background-color: rgb(117, 86, 255);
+  color: #fff;
+  margin-right: 10px;
+}
+
+.you {
+  align-self: flex-start;
+  background-color: rgb(235, 235, 238);
+  color: rgb(50, 50, 51);
+  margin-left: 10px;
+}
+
+.sender {
   font-size: 18px;
 }
 
-.you > .sender{
-  color:grey;
+.you > .sender {
+  color: grey;
   font-weight: 550;
 }
 
-.me > .sender{
+.me > .sender {
   font-weight: bold;
 }
 
-.me > .msg{
+.me > .msg {
   color: #e3e9f3;
 }
 
-.you > .msg{
+.you > .msg {
   color: rgb(0, 0, 0);
 }
 
-.time{
+.time {
   position: absolute;
   font-size: 12px;
   bottom: 0;
@@ -112,7 +114,7 @@ body {
   padding-right: 5px;
 }
 
-.notification{
+.notification {
   align-self: center;
   padding: 10px;
   border-radius: 5px;
@@ -121,12 +123,18 @@ body {
   margin: 10px;
 }
 
-#userList{
+#userList {
   height: 450px;
   overflow-y: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-#userList::-webkit-scrollbar{
+#userList::-webkit-scrollbar {
   display: none;
+}
+
+@media only screen and (max-width: 500px) {
+  #active-list {
+    display: none;
+  }
 }
