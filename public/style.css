@@ -26,9 +26,6 @@ body {
 
     min-height: 400px;
   }
-  #msg{
-    width: 70%;
-  }
 }
 
 #center-area {
@@ -45,21 +42,15 @@ body {
   bottom: 0;
   width: 100%;
   background-color: #ebeced;
-  /* height: 40px; */
-  justify-content: space-around;
-  margin-top: 50px;
-  border-radius: 20px; 
+  /* height: 40px; */ 
 }
 
 #msg {
-  height: 40px;
-  border-radius: 10px;
-  border-width: 1px;
+  height: 45px;
   text-align: center;
   background-color: #ebeced;
   outline: none;
   border: hidden;
-  width: 90%;
 }
 
 #sendbtn {
@@ -155,4 +146,14 @@ body {
   background: rgb(63, 59, 59);
   color: rgb(253, 247, 247);
   margin: 10px;
+}
+
+#userList{
+  height: 450px;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+#userList::-webkit-scrollbar{
+  display: none;
 }
